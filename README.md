@@ -3,6 +3,8 @@ This is a simple Telegram Bot for checking the status of AWS Services. The curre
 
 The purpose of building this bot is to let me know more about the AWS services. If you are loooking for how to build your TeleBot with multiple functions, this project might give you some ideas. If you are a begginer, [this](https://github.com/ki225/telegram_bot_with_AWS_for_beginner.git) might suit for you.
 
+<img width="535" alt="截圖 2024-05-05 上午11 15 21" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/95d54a77-62a4-4d00-994b-69ee9e2d96e3">
+
 
 ## Screenshots
 Here are the screenshots of using this bot.
