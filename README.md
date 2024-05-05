@@ -7,4 +7,4 @@ The python code have to keep running for getting user message. Therefore, I put 
 
 Here are the screenshots of using this bot.
 
-![image1](img/IMG_1281.jpg | width=100) ![image2](img/IMG_1282.PNG | width=50) ![image3](img/IMG_1285.JPG) ![image4](img/IMG_1286.JPG)
+![](img/IMG_1281.jpg | width=100) ![](img/IMG_1282.PNG | width=50) ![image3](img/IMG_1285.JPG) ![image4](img/IMG_1286.JPG)
