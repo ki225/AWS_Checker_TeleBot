@@ -28,7 +28,7 @@ pip install matplotlib
 ```
 You can run the python code with "python checker_bot.py" to check whether all the packages are set completely.
 
-6. Let the bot know WHO YOU ARE
+5. Let the bot know WHO YOU ARE
 You have to set the "AWS configuration" with your AWS access key, secret access key and region. Use the command below for setting. Otherwise, the bot will not catch the information for you like the following screenshot.
 
 <img width="1013" alt="截圖 2024-05-05 上午8 56 12" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/f0546a37-1bf5-44d3-876e-523f0f8f5423">
@@ -37,7 +37,7 @@ You have to set the "AWS configuration" with your AWS access key, secret access 
 aws configure
 ```
 
-7. Use "nohup"
+6. Use "nohup"
 For serving consistently, the python code have to keep running for getting user message no matter whether the EC2 console is open. 
 ```
 nohup python3 checker_bot.py
@@ -46,7 +46,7 @@ If you set some check point or error handler like try/except, you can check them
 ```
 tail -f nohup.out
 ``` 
-8. Congrat!
+7. Congrat!
 
 ## Handler
 Values of the global variable "HANDLER" represent the next input will give to which function. 
@@ -62,7 +62,7 @@ Values of the global variable "HANDLER" represent the next input will give to wh
 ### CLoudWatch
 If you want your TeleBot give you more information, you can grab the data from CLoudWatch. I use the data from CLoudWatch for counting how many errors happened in my Lambda Function.
 
-<img width="1497" alt="截圖 2024-05-04 下午1 39 51" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/ccd4e276-a72a-4b3c-b4be-d2ac25e5376a">
+<img width="953" alt="截圖 2024-05-05 上午9 24 07" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/75854aa6-cfdd-4db8-bbdc-13e9b3696617">
 
 You have to use the function `get_metric_data` for getting the data. Here are the documents you might need:
 - [get_metric_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch/client/get_metric_statistics.html)
@@ -70,5 +70,5 @@ You have to use the function `get_metric_data` for getting the data. Here are th
 
 The document clearly explain all the parameters in this function. You can find the value corresponding to the parameter like below:
 
-<img width="1440" alt="截圖 2024-05-05 上午9 20 18" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/1817086a-7fc5-4033-838f-f7cbfaf59099">
+<img width="1497" alt="截圖 2024-05-05 上午9 23 07" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/e1759573-9644-45c3-995e-74f282bc6954">
 
