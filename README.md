@@ -4,49 +4,76 @@ This is a simple Telegram Bot for checking the status of AWS Services. The curre
 The purpose of building this bot is to let me know more about the AWS services. If you are loooking for how to build your TeleBot with multiple functions, this project might give you some ideas. If you are a begginer, [this](https://github.com/ki225/telegram_bot_with_AWS_for_beginner.git) might suit for you.
 
 
-## Scrrenshots
+## Screenshots
 Here are the screenshots of using this bot.
 
 <img src="img/IMG_1281.jpg" width="225" height="400" /> <img src="img/IMG_1282.PNG" width="225" height="400" /> <img src="img/IMG_1285.JPG" width="225" height="400" /> <img src="img/IMG_1286.JPG" width="225" height="400" />
 
 ## How to set your own checker bot with this repo?
-1. Create an EC2
-2. Connect your local host to the EC2 with SSH
-3. Put the python file into your EC2 host
-The path I set the python file is in the directory `/home/ec2-user/checker_bot`.
-4. Prepare all the package you need
-In the EC2 you create, it is a whole new environment without the resources you need. First, we need the "pip" package. If you remember that you downloaded it before, you can check it by using `pip --version` first.
-```
-sudo yum upgrade
-sudo yum -y install python-pip
-```
-Then we can download the packages we need for the python file with "pip install" command.
-```
-pip install telebot
-pip install boto3
-pip install matplotlib
-```
-You can run the python code with "python checker_bot.py" to check whether all the packages are set completely.
+1. Create your Telegram Bot by asking Bot Father
+2. Fill the TeleBot TOKEN in the python file
+3. Create an EC2
+4. Connect your local host to the EC2 with SSH
+5. Put the python file into your EC2 host
+  The path I set the python file is in the directory `/home/ec2-user/checker_bot`. 
+6. Prepare all the package you need
+  In the EC2 you have created, it is a whole new environment without the resources you need. First, we need the "pip" package. If you remember that you downloaded it before, you can check it by using `pip --version` first.
+  ```
+  sudo yum upgrade
+  sudo yum -y install python-pip
+  ```
+  Then we can download the packages we need for the python file with "pip install" command.
+  ```
+  pip install telebot
+  pip install boto3
+  pip install matplotlib
+  ```
+  You can run the python code with "python checker_bot.py" to check whether all the packages are set completely.
 
-5. Let the bot know WHO YOU ARE
-You have to set the "AWS configuration" with your AWS access key, secret access key and region. Use the command below for setting. Otherwise, the bot will not catch the information for you like the following screenshot.
+7. Let the bot know WHO YOU ARE
+  You have to set the "AWS configuration" with your AWS access key, secret access key and region. Use the command below for setting. Otherwise, the bot will not catch the information for you like the following screenshot.
 
-<img width="953" alt="截圖 2024-05-05 上午9 24 07" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/75854aa6-cfdd-4db8-bbdc-13e9b3696617">
+  <img width="953" alt="截圖 2024-05-05 上午9 24 07" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/75854aa6-cfdd-4db8-bbdc-13e9b3696617">
 
-```
-aws configure
-```
+  Use SSH to connect to the EC2 host in your terminal.
+  ```
+  ssh -i <THE_PATH_TO_YOUR_KEY.pem> ec2-user@<YOUR_EC2_Public_IPv4_DNS>
+  ```
+  You will see this after you connect successfully.
+  ```
+     ,     #_
+     ~\_  ####_        Amazon Linux 2023
+    ~~  \_#####\
+    ~~     \###|
+    ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+     ~~       V~' '->
+      ~~~         /
+        ~~._.   _/
+           _/ _/
+         _/m/'
+  ```
+  Edit the configuration file.
+  ```
+  aws configure
+  ```
+  The following lines will show seperately.
+  ```
+  AWS Access Key ID [None]:
+  AWS Secret Access Key [None]:
+  Default region name [None]:
+  Default output format [None]:
+  ```
 
-6. Use "nohup"
-For serving consistently, the python code have to keep running for getting user message no matter whether the EC2 console is open. 
-```
-nohup python3 checker_bot.py
-```
-If you set some check point or error handler like try/except, you can check them from "nohup.out" with the command below.
-```
-tail -f nohup.out
-``` 
-7. Congrat!
+8. Use "nohup"
+  For serving consistently, the python code have to keep running for getting user message no matter whether the EC2 console is open. 
+  ```
+  nohup python3 checker_bot.py
+  ```
+  If you set some check point or error handler like try/except, you can check them from "nohup.out" with the command below.
+  ```
+  tail -f nohup.out
+  ``` 
+9. Congrat!
 
 ## Handler
 Values of the global variable "HANDLER" represent the next input will give to which function. 
