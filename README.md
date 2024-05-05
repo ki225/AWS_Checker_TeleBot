@@ -31,7 +31,7 @@ You can run the python code with "python checker_bot.py" to check whether all th
 5. Let the bot know WHO YOU ARE
 You have to set the "AWS configuration" with your AWS access key, secret access key and region. Use the command below for setting. Otherwise, the bot will not catch the information for you like the following screenshot.
 
-<img width="1013" alt="截圖 2024-05-05 上午8 56 12" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/f0546a37-1bf5-44d3-876e-523f0f8f5423">
+<img width="953" alt="截圖 2024-05-05 上午9 24 07" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/75854aa6-cfdd-4db8-bbdc-13e9b3696617">
 
 ```
 aws configure
@@ -62,7 +62,7 @@ Values of the global variable "HANDLER" represent the next input will give to wh
 ### CLoudWatch
 If you want your TeleBot give you more information, you can grab the data from CLoudWatch. I use the data from CLoudWatch for counting how many errors happened in my Lambda Function.
 
-<img width="953" alt="截圖 2024-05-05 上午9 24 07" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/75854aa6-cfdd-4db8-bbdc-13e9b3696617">
+<img width="1497" alt="截圖 2024-05-04 下午1 39 51" src="https://github.com/ki225/AWS_Checker_TeleBot/assets/123147937/0cf732df-23dd-4756-9679-f01d5542e4b0">
 
 You have to use the function `get_metric_data` for getting the data. Here are the documents you might need:
 - [get_metric_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch/client/get_metric_statistics.html)
